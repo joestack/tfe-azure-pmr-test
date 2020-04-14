@@ -41,11 +41,17 @@ module "network" {
 #}
 
 
-#module "compute" {
-#  source  = "app.terraform.io/JoeStack/compute/azurerm"
-#  version = "3.0.0"
-#  resource_group_name = azurerm_resource_group.test.name
-#  vm_os_simple        = "UbuntuServer"
-#  public_ip_dns       = ["linsimplevmips"] // change to a unique name per datacenter region
-#  vnet_subnet_id      = module.network.vnet_subnets[0]
-#}
+module "compute" {
+  source  = "app.terraform.io/JoeStack/compute/azurerm"
+  version = "3.0.0"
+  resource_group_name = azurerm_resource_group.test.name
+  vm_os_simple        = "UbuntuServer"
+  public_ip_dns       = ["linsimplevmips"] // change to a unique name per datacenter region
+  vnet_subnet_id      = module.network.vnet_subnets[0]
+}
+
+
+output "linux_vm_public_name" {
+  value = module.compute.public_ip_dns_name
+}
+
