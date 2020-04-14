@@ -13,6 +13,7 @@ resource "azurerm_resource_group" "test" {
 }
 
 module "network" {
+  depends_on = [azurerm_resource_group.test]
   source  = "app.terraform.io/JoeStack/network/azurerm"
   version = "3.0.1"
   resource_group_name = azurerm_resource_group.test.name
