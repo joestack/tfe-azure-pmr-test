@@ -44,7 +44,7 @@ module "network" {
 module "compute" {
   source  = "app.terraform.io/JoeStack/compute/azurerm"
   version = "3.0.0"
-  resource_group_name = azurerm_resource_group.example.name
+  resource_group_name = azurerm_resource_group.test.name
   is_windows_image    = true
   vm_hostname         = "mywinvm" // line can be removed if only one VM module per resource group
   admin_password      = "ComplxP@ssw0rd!"
