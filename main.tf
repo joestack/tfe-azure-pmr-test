@@ -54,7 +54,7 @@ module "compute" {
 }
 
 output "windows_vm_public_name" {
-  value = module.windowsservers.public_ip_dns_name
+  value = module.compute.public_ip_dns_name
 }
 
 
