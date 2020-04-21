@@ -1,4 +1,5 @@
 provider "azurerm" {
+  version = "=2.5.0"
   features {}
 
   # whilst the `version` attribute is optional, we recommend pinning to a given version of the Provider
