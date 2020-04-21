@@ -52,6 +52,11 @@ module "compute" {
   vm_os_simple        = "WindowsServer"
   public_ip_dns       = ["joestackwinsimplevmips"] // change to a unique name per datacenter region
   vnet_subnet_id      = module.network.vnet_subnets[0]
+  
+  tags = {
+    environment = "dev"
+    costcenter  = "it"
+  }
 }
 
 output "windows_vm_public_name" {
