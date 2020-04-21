@@ -49,7 +49,7 @@ module "compute" {
   vm_hostname         = "mywinvm" // line can be removed if only one VM module per resource group
   admin_password      = "ComplxP@ssw0rd!"
   vm_os_simple        = "WindowsServer"
-  public_ip_dns       = ["jswinsimplevmips"] // change to a unique name per datacenter region
+  public_ip_dns       = ["joewinsimplevmips"] // change to a unique name per datacenter region
   vnet_subnet_id      = module.network.vnet_subnets[0]
 }
 
