@@ -56,6 +56,7 @@ module "compute" {
   tags = {
     environment = "dev"
     costcenter  = "it"
+    department  = "devops"
   }
 }
 
